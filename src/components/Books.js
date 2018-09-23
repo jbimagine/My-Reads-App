@@ -24,7 +24,7 @@ class Books extends React.Component {
                    </div>
                  </div>
                  <div key = {book.title} className="book-title">{book.title}</div>
-                 <div key = {book.author} className="book-authors">{book.author}</div>
+                 <div key = {book.authors} className="book-authors">{book.authors && book.authors.join(', ')}</div>
                </div>
              </li>
            ))}
