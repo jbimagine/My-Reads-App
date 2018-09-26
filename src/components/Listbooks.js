@@ -1,7 +1,7 @@
 import React from 'react'
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Books from './Books'
+import Book from './Book'
 
 
 class ListBooks extends React.Component {

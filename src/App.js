@@ -1,7 +1,7 @@
 import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
-import Books from './components/Books'
+import Book from './components/Book'
 import Bookshelf from './components/Bookshelf'
 import ListBooks from './components/Listbooks'
 import * as BooksAPI from './BooksAPI'
