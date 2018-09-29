@@ -6,65 +6,29 @@ import Book from './Book'
 
 class Bookshelf extends React.Component {
    render() {
-    const {books} = this.props;
+    const {books, name} = this.props;
        return(
-        <div className="list-books">
-        <div className="list-books-title">
-          <h1>MyReads</h1>
-        </div>
-        <div className="list-books-content">
+        
+       <div>
           <div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Currently Reading</h2>
+              <h2 className="bookshelf-title">{name}</h2>
               <div className="bookshelf-books">
               <ol className = 'books-grid'>
                 {
                   books
-                  .filter(book => book.shelf === 'currentlyReading')
-                  .map(book =>(
-                    <li key={book.id}>
-                    <Book  book = {book} />
-                    </li>
+                  .map((book, key) =>(
+                    <Book  
+                    changeShelf ={this.props.changeShelf} 
+                    book = { book } 
+                    key = { key }
+                    />
                   ))
                 }
                 </ol>
               </div>
-            </div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Want to Read</h2>
-              <div className="bookshelf-books">
-              <ol className = 'books-grid'>
-              {
-                  books
-                  .filter(book => book.shelf === 'wantToRead')
-                  .map(book =>(
-                    <li key={book.id}>
-                    <Book  book = {book} />
-                    </li>
-                  ))
-                }
-                </ol>
-              </div>
-            </div>
-            <div className="bookshelf">
-              <h2 className="bookshelf-title">Read</h2>
-              <div className="bookshelf-books">
-              <ol className = 'books-grid'>
-              {
-                  books
-                    .filter(book => book.shelf === 'read')
-                      .map(book =>(
-                        <li key={book.id}>
-                        <Book  book = {book} />
-                        </li>
-                      ))
-                }
-                </ol>
-              </div>
-            </div>
-          </div>
-        </div>
-       
+            </div>  
+          </div>     
       </div>
        )
    }
